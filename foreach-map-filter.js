@@ -28,7 +28,8 @@ function onlyEvenValues(arr){
 }
 
 /*
-Write a function called showFirstAndLast which accepts an array of strings and returns a new array with only the first and last character of each string.
+Write a function called showFirstAndLast which accepts an array of strings and returns a new array with only the first 
+and last character of each string.
 
 Examples:
     showFirstAndLast(['colt','matt', 'tim', 'test']) // ["ct", "mt", "tm", "tt"]
@@ -36,7 +37,9 @@ Examples:
 
 */
 function showFirstAndLast(arr){
-    
+    return arr.map(function(value){
+        return `${value[0]}${value[(value.length-1)]}`;
+    })
 }
 
 /*
