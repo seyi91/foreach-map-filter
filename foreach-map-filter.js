@@ -215,7 +215,8 @@ function findInObj(arr, key, searchValue) {
 }
 
 /*
-Write a function called removeVowels which accepts a string and returns a new string with all of the vowels (both uppercased and lowercased) removed. Every character in the new string should be lowercased.
+Write a function called removeVowels which accepts a string and returns a new string with all of the vowels 
+(both uppercased and lowercased) removed. Every character in the new string should be lowercased.
 
 Examples:
     removeVowels('Elie') // ('l')
@@ -223,7 +224,12 @@ Examples:
     removeVowels('ZZZZZZ') // ('zzzzzz')
 */
 
-function removeVowels(str) { }
+function removeVowels(str) {
+    const vowels = 'aeiou';
+    return str.toLowerCase().split('').filter(function(val){
+        return vowels.indexOf(val) === -1;
+    }).join('');
+ }
 
 /*
 Write a function called doubleOddNumbers which accepts an array and returns a new array with all of the odd numbers doubled (HINT - you can use map and filter to double and then filter the odd numbers).
