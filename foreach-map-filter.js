@@ -8,9 +8,11 @@ Examples:
 
 */
 function doubleValues(arr) {
-    return arr.map(function (value) {
-        return value * 2;
+    let newArr = [];
+    arr.forEach(function (val) {
+        newArr.push(val * 2);
     })
+    return newArr;
 }
 
 /*
@@ -21,10 +23,20 @@ Examples:
     onlyEvenValues([5,1,2,3,10]) // [2,10]
 
 */
+// function onlyEvenValues(arr) {
+//     return arr.filter(function (value) {
+//         return (value % 2 === 0);
+//     })
+// }
+
 function onlyEvenValues(arr) {
-    return arr.filter(function (value) {
-        return (value % 2 === 0);
-    })
+    let newArr = [];
+    arr.forEach(function (val) {
+        if (val % 2 === 0) {
+            newArr.push(val);
+        }
+    });
+    return newArr;
 }
 
 /*
@@ -36,10 +48,18 @@ Examples:
     showFirstAndLast(['hi', 'goodbye', 'smile']) // ['hi', 'ge', 'se']
 
 */
+// function showFirstAndLast(arr) {
+//     return arr.map(function (value) {
+//         return `${value[0]}${value[(value.length - 1)]}`;
+//     })
+// }
+
 function showFirstAndLast(arr) {
-    return arr.map(function (value) {
-        return `${value[0]}${value[(value.length - 1)]}`;
-    })
+    let newArr = [];
+    arr.forEach(function (val) {
+        newArr.push(val[0] + val[val.length - 1]);
+    });
+    return newArr;
 }
 
 /*
@@ -80,7 +100,7 @@ function vowelCount(str) {
     let splitArr = str.split("");
     let obj = {};
 
-    splitArr.forEach(function(letter){
+    splitArr.forEach(function (letter) {
         let lowerCasedLetter = letter.toLowerCase();
         if (isVowel(lowerCasedLetter)) {
             if (obj[lowerCasedLetter]) {
@@ -94,17 +114,23 @@ function vowelCount(str) {
 }
 
 /*
-Write a function called doubleValuesWithMap which accepts an array and returns a new array with all the values in the array passed to the function doubled
+Write a function called doubleValuesWithMap which accepts an array and returns a new array with all the values in the 
+array passed to the function doubled
 
 Examples:
     doubleValuesWithMap([1,2,3]) // [2,4,6]
     doubleValuesWithMap([1,-2,-3]) // [2,-4,-6]
 */
 
-function doubleValuesWithMap(arr) { }
+function doubleValuesWithMap(arr) {
+    return arr.map(function (value) {
+        return value * 2;
+    })
+}
 
 /*
-Write a function called valTimesIndex which accepts an array and returns a new array with each value multiplied by the index it is currently at in the array.
+Write a function called valTimesIndex which accepts an array and returns a new array with each value multiplied by the 
+index it is currently at in the array.
 
 Examples:
     valTimesIndex([1,2,3]) // [0,2,6]
@@ -112,7 +138,9 @@ Examples:
 */
 
 function valTimesIndex(arr) {
-
+    return arr.map(function (val, idx) {
+        return val * idx;
+    })
 }
 
 /*
@@ -123,7 +151,9 @@ Examples:
 */
 
 function extractKey(arr, key) {
-
+    return arr.map(function(val){
+        return val[key];
+    })
 }
 
 /*
